@@ -14,7 +14,7 @@ function mostrarClimaActual() {
         break;
     }
     alert("Por favor, ingresa un nombre de ciudad válido.");
-}
+    }
 
     let clima = "25°C con cielo despejado.";
     historialConsultas.push("Consulta: Clima en " + ciudad);
@@ -62,7 +62,7 @@ function conversorTemperatura() {
     }
 
     let fahrenheit = (celsius *9/5) + 32;
-    historialConsultas.push("Conversión de temperatura");
+    historialConsultas.push("Conversión: " + celsius + "°C a " + fahrenheit + "°F");
     alert("La temperatura en Fahrenheit es de: " + fahrenheit + "°F");
 }
 
