@@ -108,8 +108,14 @@ do{
             verHistorial();
             break;
         case 0:
+            let salir = confirm("¿Estás seguro que deseas salir del simulador?");
+            if (!salir) {
+                opcion = -1; //Si usaba continue; no me funcionaba. Tuve que cambiar el valor de opcion para que no sea 0. No supe hacerlo de otra manera.
+                break;
+            }
             alert("Gracias por usar el simulador del clima. 🌦️ ¡Vuelva pronto!");
             console.log("Gracias por usar el simulador del clima. 🌦️ ¡Vuelva pronto!");
+            opcion = 0;
             break;
     }
 } while (opcion !== 0);
