@@ -14,11 +14,13 @@ function mostrarClimaActual() {
         break;
     }
     alert("Por favor, ingresa un nombre de ciudad válido.");
+    console.log("Por favor, ingresa un nombre de ciudad válido.");
     }
 
     let clima = "25°C con cielo despejado.";
     historialConsultas.push("Consulta: Clima en " + ciudad);
-    alert(" El clima en " + ciudad + " es de " + clima);
+    alert("El clima en " + ciudad + " es de " + clima);
+    console.log("El clima en " + ciudad + " es de " + clima);
 }
 
 function mostrarPronostico() {
@@ -37,12 +39,14 @@ function mostrarPronostico() {
             break;
     }
     alert("Por favor, ingresa un número válido entre 1 y 5.");
+    console.log("Por favor, ingresa un número válido entre 1 y 5.");
   }
     const pronostico = ["Soleado","Nublado","Lluvia intensa","Tormenta Eléctrica","Soleado"];
     let resultado = pronostico.slice(0, dias);
     historialConsultas.push("Consulta: Pronóstico para " + dias + " días");
 
     alert("Pronóstico para los proximos " + dias + " días:\n" + resultado.join("\n"));
+    console.log("Pronóstico para los proximos " + dias + " días:\n" + resultado.join("\n"));
 }
 
 function conversorTemperatura() {
@@ -59,18 +63,22 @@ function conversorTemperatura() {
             break;
         }
         alert("Por favor, ingresa un número válido.");
+        console.log("Por favor, ingresa un número válido.");
     }
 
     let fahrenheit = (celsius *9/5) + 32;
     historialConsultas.push("Conversión: " + celsius + "°C a " + fahrenheit + "°F");
     alert("La temperatura en Fahrenheit es de: " + fahrenheit + "°F");
+    console.log("La temperatura en Fahrenheit es de: " + fahrenheit + "°F");
 }
 
 const verHistorial = () => {
     if (historialConsultas.length === 0) {
         alert("El historial de consultas está vacío.");
+        console.log("El historial de consulta está vacío.");
     } else {
         alert("Historial de consultas:\n\n" + historialConsultas.join("\n"));
+        console.log("Historial de consultas:\n" + historialConsultas.join("\n"));
     }
 };
 
@@ -80,6 +88,7 @@ do{
 
     if (opcion === null) {
         alert("Gracias por usar el simulador del clima. 🌦️ ¡Vuelva pronto!");
+        console.log("Gracias por usar el simulador del clima. 🌦️ ¡Vuelva pronto!");
         break;
     }
 
@@ -100,6 +109,7 @@ do{
             break;
         case 0:
             alert("Gracias por usar el simulador del clima. 🌦️ ¡Vuelva pronto!");
+            console.log("Gracias por usar el simulador del clima. 🌦️ ¡Vuelva pronto!");
             break;
     }
 } while (opcion !== 0);
