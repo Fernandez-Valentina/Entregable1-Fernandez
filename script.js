@@ -66,20 +66,20 @@ function conversorTemperatura() {
     alert("La temperatura en Fahrenheit es de: " + fahrenheit + "°F");
 }
 
-function verHistorial() {
+const verHistorial = () => {
     if (historialConsultas.length === 0) {
-    alert("El historial de consultas está vacío.");
+        alert("El historial de consultas está vacío.");
     } else {
         alert("Historial de consultas:\n\n" + historialConsultas.join("\n"));
     }
-}
+};
 
 let opcion;
 do{
     opcion = prompt("¡Bienvenido al simulador del estado del tiempo!\nSelecciona el número de la opción deseada: \n\n 1. Mostrar clima actual. \n 2. Mostrar pronóstico de los próximos días. \n 3. Convertir de Celsius a Fahrenheit. \n 4. Ver historial de consultas. \n\n Ingrese 0 para salir. ");
 
     if (opcion === null) {
-        alert("Gracias por usar el simulador del clima. ¡Vuelva pronto!");
+        alert("Gracias por usar el simulador del clima. 🌦️ ¡Vuelva pronto!");
         break;
     }
 
@@ -99,7 +99,7 @@ do{
             verHistorial();
             break;
         case 0:
-            alert("Gracias por usar el simulador del clima. ¡Vuelva pronto!");
+            alert("Gracias por usar el simulador del clima. 🌦️ ¡Vuelva pronto!");
             break;
     }
 } while (opcion !== 0);
