@@ -1,12 +1,11 @@
 const historialConsultas = [];
 
-// function mostrarClimaActual() {
-//     let ciudad = prompt("Ingrese el nombre de su ciudad");
-//     let clima = "25°C con cielo despejado";
-//     historialConsultas.push("Consulta: Clima en:" + ciudad);
-//     alert(" El clima en " + ciudad + " es de " + clima);
-// }
-// mostrarClimaActual();
+function mostrarClimaActual() {
+    let ciudad = prompt("Ingrese el nombre de su ciudad");
+    let clima = "25°C con cielo despejado";
+    historialConsultas.push("Consulta: Clima en " + ciudad);
+    alert(" El clima en " + ciudad + " es de " + clima);
+}
 
 function mostrarPronostico() {
     let dias;
@@ -25,16 +24,6 @@ function mostrarPronostico() {
 
     alert("Pronóstico para los proximos " + dias + " días:\n" + resultado.join("\n"));
 }
-mostrarPronostico();
-
-function verHistorial() {
-    if (historialConsultas.length === 0) {
-    alert("El historial de consultas está vacío.");
-    } else {
-        alert("Historial de consultas:\n" + historialConsultas.join("\n"));
-    }
-}
-verHistorial();
 
 function conversorTemperatura() {
     let celsius = parseFloat(prompt("Ingrese la temperatura en Celsius:"));
@@ -43,4 +32,34 @@ function conversorTemperatura() {
     alert("La temperatura en Fahrenheit es: " + fahrenheit + "°F");
     historialConsultas.push("Conversión de temperatura");
 }
-conversorTemperatura();
+
+function verHistorial() {
+    if (historialConsultas.length === 0) {
+    alert("El historial de consultas está vacío.");
+    } else {
+        alert("Historial de consultas:\n" + historialConsultas.join("\n"));
+    }
+}
+
+let opcion;
+do{
+    opcion = parseInt(prompt("¡Bienvenido al simulador del estado del tiempo!\nSelecciona el número de la opción deseada: \n\n 1. Mostrar clima actual. \n 2. Mostrar pronóstico de los próximos días. \n 3. Convertir de Celsius a Fahrenheit. \n 4. Ver historial de consultas. \n\n Ingrese 0 para salir. "));
+
+    switch (opcion) {
+        case 1:
+            mostrarClimaActual();
+            break;
+        case 2:
+            mostrarPronostico();
+            break;
+        case 3:
+            conversorTemperatura();
+            break;
+        case 4:
+            verHistorial();
+            break;
+        case 0:
+            alert("Gracias por usar el simulador del clima. ¡Vuelva pronto!");
+            break;
+    }
+} while (opcion !==0);
