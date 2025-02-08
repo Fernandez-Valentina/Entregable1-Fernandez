@@ -2,6 +2,9 @@ const historialConsultas = [];
 
 function mostrarClimaActual() {
     let ciudad = prompt("Ingrese el nombre de su ciudad");
+    if (ciudad === null || ciudad.length === 0) {
+        return;
+    }
     let clima = "25°C con cielo despejado";
     historialConsultas.push("Consulta: Clima en " + ciudad);
     alert(" El clima en " + ciudad + " es de " + clima);
@@ -11,26 +14,45 @@ function mostrarPronostico() {
     let dias;
 
     while (true) {
-        dias = parseInt(prompt("¿Cuántos días de pronóstico desea ver? (Máximo 5 días)"));
+        dias = prompt("¿Cuántos días de pronóstico desea ver? (Máximo 5 días)");
+
+        if (dias === null || dias.length === 0) {
+            return;
+        }
+
+        dias = parseInt(dias);
     
-     if (!isNaN(dias) && dias >= 1 && dias <= 5) {
-         break;
+        if (!isNaN(dias) && dias >= 1 && dias <= 5) {
+            break;
     }
     alert("Por favor, ingresa un número válido entre 1 y 5.");
   }
     const pronostico = ["Soleado","Nublado","Lluvia intensa","Tormenta Eléctrica","Soleado"];
     let resultado = pronostico.slice(0, dias);
-    historialConsultas.push("Consulta: Pronóstico para " + dias + " días ");
+    historialConsultas.push("Consulta: Pronóstico para " + dias + " días");
 
     alert("Pronóstico para los proximos " + dias + " días:\n" + resultado.join("\n"));
 }
 
 function conversorTemperatura() {
-    let celsius = parseFloat(prompt("Ingrese la temperatura en Celsius:"));
-    let fahrenheit = (celsius *9/5) + 32;
+    let celsius;
+    while (true) {
+        celsius = prompt("Ingrese la temperatura en Celsius:");
+        if (celsius === null || celsius.length === 0) {
+            return;
+        }
 
-    alert("La temperatura en Fahrenheit es: " + fahrenheit + "°F");
+        celsius = parseFloat(celsius);
+
+        if (!isNaN(celsius)) {
+            break;
+        }
+        alert("Por favor, ingresa un número válido.");
+    }
+
+    let fahrenheit = (celsius *9/5) + 32;
     historialConsultas.push("Conversión de temperatura");
+    alert("La temperatura en Fahrenheit es: " + fahrenheit + "°F");
 }
 
 function verHistorial() {
