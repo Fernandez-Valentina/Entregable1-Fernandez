@@ -1,11 +1,22 @@
 const historialConsultas = [];
 
 function mostrarClimaActual() {
-    let ciudad = prompt("Ingrese el nombre de su ciudad");
+    let ciudad;
+
+    while (true) {
+        ciudad = prompt("Ingrese el nombre de su ciudad:");
+    
     if (ciudad === null || ciudad.length === 0) {
         return;
     }
-    let clima = "25°C con cielo despejado";
+
+    if (isNaN(parseInt(ciudad))) {
+        break;
+    }
+    alert("Por favor, ingresa un nombre de ciudad válido.");
+}
+
+    let clima = "25°C con cielo despejado.";
     historialConsultas.push("Consulta: Clima en " + ciudad);
     alert(" El clima en " + ciudad + " es de " + clima);
 }
@@ -59,7 +70,7 @@ function verHistorial() {
     if (historialConsultas.length === 0) {
     alert("El historial de consultas está vacío.");
     } else {
-        alert("Historial de consultas:\n" + historialConsultas.join("\n"));
+        alert("Historial de consultas:\n\n" + historialConsultas.join("\n"));
     }
 }
 
@@ -84,4 +95,4 @@ do{
             alert("Gracias por usar el simulador del clima. ¡Vuelva pronto!");
             break;
     }
-} while (opcion !==0);
+} while (opcion !== 0);
