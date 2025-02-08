@@ -63,7 +63,7 @@ function conversorTemperatura() {
 
     let fahrenheit = (celsius *9/5) + 32;
     historialConsultas.push("Conversión de temperatura");
-    alert("La temperatura en Fahrenheit es: " + fahrenheit + "°F");
+    alert("La temperatura en Fahrenheit es de: " + fahrenheit + "°F");
 }
 
 function verHistorial() {
@@ -76,7 +76,14 @@ function verHistorial() {
 
 let opcion;
 do{
-    opcion = parseInt(prompt("¡Bienvenido al simulador del estado del tiempo!\nSelecciona el número de la opción deseada: \n\n 1. Mostrar clima actual. \n 2. Mostrar pronóstico de los próximos días. \n 3. Convertir de Celsius a Fahrenheit. \n 4. Ver historial de consultas. \n\n Ingrese 0 para salir. "));
+    opcion = prompt("¡Bienvenido al simulador del estado del tiempo!\nSelecciona el número de la opción deseada: \n\n 1. Mostrar clima actual. \n 2. Mostrar pronóstico de los próximos días. \n 3. Convertir de Celsius a Fahrenheit. \n 4. Ver historial de consultas. \n\n Ingrese 0 para salir. ");
+
+    if (opcion === null) {
+        alert("Gracias por usar el simulador del clima. ¡Vuelva pronto!");
+        break;
+    }
+
+    opcion = parseInt(opcion);
 
     switch (opcion) {
         case 1:
