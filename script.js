@@ -35,3 +35,12 @@ function verHistorial() {
     }
 }
 verHistorial();
+
+function conversorTemperatura() {
+    let celsius = parseFloat(prompt("Ingrese la temperatura en Celsius:"));
+    let fahrenheit = (celsius *9/5) + 32;
+
+    alert("La temperatura en Fahrenheit es: " + fahrenheit + "°F");
+    historialConsultas.push("Conversión de temperatura");
+}
+conversorTemperatura();
